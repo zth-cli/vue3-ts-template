@@ -1,0 +1,40 @@
+{
+  "name": "vue3-template-ts",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "preinstall": "echo 111",
+    "postinstall": "echo 123",
+    "dev": "vite --port 3334 --open",
+    "preview": "vite preview",
+    "eslint": "eslint .",
+    "prettier": "prettier --write .",
+    "sizecheck": "npx vite-bundle-visualizer",
+    "build": "vue-tsc && vite build"
+  },
+  "dependencies": {
+    "element-plus": "^2.3.12",
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.6.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
+    "@typescript-eslint/parser": "^6.7.0",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@vitejs/plugin-vue-jsx": "^3.0.2",
+    "eslint": "^8.49.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-vue": "^9.17.0",
+    "prettier": "^3.0.3",
+    "sass": "^1.66.1",
+    "typescript": "^5.0.2",
+    "unplugin-auto-import": "^0.16.6",
+    "unplugin-vue-components": "^0.25.2",
+    "vite": "^4.4.5",
+    "vite-bundle-visualizer": "^0.10.0",
+    "vite-plugin-inspect": "^0.7.38",
+    "vue-tsc": "^1.8.5"
+  }
+}

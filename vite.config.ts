@@ -1,0 +1,50 @@
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
+import Inspect from 'vite-plugin-inspect'
+import Components from 'unplugin-vue-components/vite'
+import AutoImport from 'unplugin-auto-import/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers' // 自动引入element-plus组件
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [
+    vue({
+      script: {
+        defineModel: true,
+        propsDestructure: true // 解构 props
+      }
+    }),
+    vueJsx(),
+    Inspect(),
+    AutoImport({
+      include: [
+        /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+        /\.vue$/,
+        /\.vue\?vue/, // .vue
+        /\.md$/ // .md
+      ],
+      imports: ['vue', 'vue-router', 'vuex', 'vue/macros', '@vueuse/core'], // 自动导入vue和vue-router等相关函数
+      eslintrc: {
+        enabled: true, // 若没此json文件，先开启，生成后在关闭
+        filepath: './.eslintrc-auto-import.json', // 默认
+        globalsPropValue: true
+      },
+      dirs: ['src/store'],
+      vueTemplate: true,
+      resolvers: [ElementPlusResolver()]
+    }),
+    //
+    Components({
+      include: [
+        /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+        /\.vue$/,
+        /\.vue\?vue/, // .vue
+        /\.md$/ // .md
+      ],
+      dirs: ['src/components'],
+      deep: true,
+      resolvers: [ElementPlusResolver()]
+    })
+  ]
+})
