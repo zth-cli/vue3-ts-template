@@ -5,7 +5,9 @@ import Inspect from 'vite-plugin-inspect'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers' // 自动引入element-plus组件
+import path from 'path'
 
+const resolve = (dir: string) => path.join(__dirname, dir)
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -26,7 +28,7 @@ export default defineConfig({
       ],
       imports: ['vue', 'vue-router', 'vuex', 'vue/macros', '@vueuse/core'], // 自动导入vue和vue-router等相关函数
       eslintrc: {
-        enabled: true, // 若没此json文件，先开启，生成后在关闭
+        enabled: false, // 若没此json文件，先开启，生成后在关闭
         filepath: './.eslintrc-auto-import.json', // 默认
         globalsPropValue: true
       },
@@ -46,5 +48,22 @@ export default defineConfig({
       deep: true,
       resolvers: [ElementPlusResolver()]
     })
-  ]
+  ],
+  server: {
+    port: 3334,
+    host: '0.0.0.0',
+    open: true,
+    proxy: {
+      '/api': {
+        target: 'localhost',
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/api/, '')
+      }
+    }
+  },
+  resolve: {
+    alias: {
+      '@': resolve('src')
+    }
+  }
 })

@@ -1,18 +1,43 @@
-# Vue 3 + TypeScript + Vite
+# Vue 3 + Vite + TS空模板
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+![截图](./public/screenshot.png)
 
-## Recommended IDE Setup
+## 特性
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- **🌟 最新技术栈**：使用 Vue3/Vite4 等前端前沿技术开发
+- **🌟 TypeScript**: 应用程序级 JavaScript 的语言
+- **🌟 JSX**: 开箱支持JSX语法
+- **🌟 自动引入**: 自动按需引入组件, vue及生态插件API开箱即用
+- **🌟 Eslint**: 统一规则执行代码检查, 发现潜在得代码错误
+- **🌟 Prettier**: 格式化代码,规范统一代码风格
+- **🌟 commitlint**: 规范git commit提交信息格,更清晰的查看每一次代码提交记录
 
-## Type Support For `.vue` Imports in TS
+## 安装使用
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+**克隆或下载源码**
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+> 环境 node版本 >= 16, 建议项目使用pnpm包管理器,
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+- 安装依赖
+
+```bash
+npm install pnpm -g
+```
+
+```bash
+pnpm i
+```
+
+- 运行
+
+```bash
+# 运行主应用, 其他命令详见根目录package.json
+pnpm dev
+```
+
+- 打包
+
+```bash
+# 打包主应用, 其他命令详见根目录package.json
+pnpm build
+```
