@@ -8,16 +8,21 @@
     "postinstall": "echo 123",
     "dev": "vite --port 3334 --open",
     "preview": "vite preview",
+    "build": "vite build",
+    "typecheck": "vue-tsc",
     "eslint": "eslint .",
     "prettier": "prettier --write .",
     "sizecheck": "npx vite-bundle-visualizer",
-    "build": "vue-tsc && vite build"
+    "prepare": "husky install",
+    "lint": "lint-staged --allow-empty --config ./lintstagedrc.json"
   },
   "dependencies": {
     "element-plus": "^2.3.12",
     "vue": "^3.3.4"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
     "@types/node": "^20.6.0",
     "@typescript-eslint/eslint-plugin": "^6.7.0",
     "@typescript-eslint/parser": "^6.7.0",
@@ -27,6 +32,8 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-vue": "^9.17.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
     "prettier": "^3.0.3",
     "sass": "^1.66.1",
     "typescript": "^5.0.2",
