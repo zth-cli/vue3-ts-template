@@ -26,7 +26,7 @@ export default defineConfig({
         /\.vue\?vue/, // .vue
         /\.md$/ // .md
       ],
-      imports: ['vue', 'vue-router', 'vuex', 'vue/macros', '@vueuse/core'], // 自动导入vue和vue-router等相关函数
+      imports: ['vue', 'vue-router'], // 自动导入vue和vue-router等相关函数
       eslintrc: {
         enabled: false, // 若没此json文件，先开启，生成后在关闭
         filepath: './.eslintrc-auto-import.json', // 默认
