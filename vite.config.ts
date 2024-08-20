@@ -14,8 +14,8 @@ export default defineConfig({
     vue({
       script: {
         defineModel: true,
-        propsDestructure: true // 解构 props
-      }
+        propsDestructure: true, // 解构 props
+      },
     }),
     vueJsx(),
     Inspect(),
@@ -24,17 +24,17 @@ export default defineConfig({
         /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
         /\.vue$/,
         /\.vue\?vue/, // .vue
-        /\.md$/ // .md
+        /\.md$/, // .md
       ],
       imports: ['vue', 'vue-router'], // 自动导入vue和vue-router等相关函数
       eslintrc: {
         enabled: false, // 若没此json文件，先开启，生成后在关闭
         filepath: './.eslintrc-auto-import.json', // 默认
-        globalsPropValue: true
+        globalsPropValue: true,
       },
       dirs: ['src/store'],
       vueTemplate: true,
-      resolvers: [ElementPlusResolver()]
+      resolvers: [ElementPlusResolver()],
     }),
     //
     Components({
@@ -42,12 +42,12 @@ export default defineConfig({
         /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
         /\.vue$/,
         /\.vue\?vue/, // .vue
-        /\.md$/ // .md
+        /\.md$/, // .md
       ],
       dirs: ['src/components'],
       deep: true,
-      resolvers: [ElementPlusResolver()]
-    })
+      resolvers: [ElementPlusResolver()],
+    }),
   ],
   server: {
     port: 3334,
@@ -57,13 +57,13 @@ export default defineConfig({
       '/api': {
         target: 'localhost',
         changeOrigin: true,
-        rewrite: path => path.replace(/^\/api/, '')
-      }
-    }
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+    },
   },
   resolve: {
     alias: {
-      '@': resolve('src')
-    }
-  }
+      '@': resolve('src'),
+    },
+  },
 })

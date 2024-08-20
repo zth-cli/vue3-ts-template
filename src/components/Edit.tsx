@@ -6,5 +6,5 @@ export const Edit = defineComponent({
         <code>components/HelloWorld.vue</code> to test HMR
       </p>
     )
-  }
+  },
 })
