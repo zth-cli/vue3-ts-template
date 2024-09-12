@@ -4,7 +4,6 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import Inspect from 'vite-plugin-inspect'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers' // 自动引入element-plus组件
 import path from 'path'
 
 const resolve = (dir: string) => path.join(__dirname, dir)
@@ -34,7 +33,7 @@ export default defineConfig({
       },
       dirs: ['src/store'],
       vueTemplate: true,
-      resolvers: [ElementPlusResolver()],
+      resolvers: [],
     }),
     //
     Components({
@@ -46,7 +45,7 @@ export default defineConfig({
       ],
       dirs: ['src/components'],
       deep: true,
-      resolvers: [ElementPlusResolver()],
+      resolvers: [],
     }),
   ],
   server: {
