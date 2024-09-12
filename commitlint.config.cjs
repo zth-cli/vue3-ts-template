@@ -23,7 +23,7 @@ module.exports = {
     'type-enum': [
       2,
       'always',
-      ['ci', 'docs', 'feat', 'fix', 'perf', 'refactor', 'build', 'chore', 'revert', 'style', 'test']
+      ['ci', 'docs', 'feat', 'fix', 'perf', 'refactor', 'build', 'chore', 'revert', 'style', 'test'],
     ],
     'type-empty': [2, 'never'], // <type> 不能为空
     // 'type-case': [2, 'always', 'lower-case'], // <type>格式小写
@@ -37,6 +37,6 @@ module.exports = {
     // 'subject-case': [2, 'never', 'lower-case'],
     'subject-case': [0, 'never'],
 
-    'header-max-length': [0, 'always', 72] // header 最长72
-  }
+    'header-max-length': [0, 'always', 72], // header 最长72
+  },
 }
