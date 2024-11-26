@@ -1,43 +1,56 @@
-# Vue 3 + Vite + TS空模板
+# Vue 3 + Vite + TS 项目模板
 
-![截图](./public/screenshot.png)
+## ✨ 特性
 
-## 特性
+- **💪 前沿技术栈**：基于 Vue 3、Vite 4、TypeScript 等最新技术栈开发
+- **🔥 TypeScript**：使用 TypeScript 开发，提供完整的类型支持
+- **⚡️ 快速热重载**：无需等待漫长的编译，快速响应文件更改
+- **🎨 组件自动导入**：自动按需导入组件和 API，提高开发效率
+- **📦 代码规范**：集成 ESLint、Prettier，统一代码风格
+- **🔍 Git 规范**：集成 commitlint，规范化 Git 提交信息
+- **🎯 零配置**：开箱即用的配置，专注于业务开发
 
-- **🌟 最新技术栈**：使用 Vue3/Vite4 等前端前沿技术开发
-- **🌟 TypeScript**: 应用程序级 JavaScript 的语言
-- **🌟 TSX**: 开箱支持TSX语法
-- **🌟 自动引入**: 自动按需引入组件, vue及生态插件API开箱即用
-- **🌟 Eslint**: 统一规则执行代码检查, 发现潜在得代码错误
-- **🌟 Prettier**: 格式化代码,规范统一代码风格
-- **🌟 commitlint**: 规范git commit提交信息格,更清晰的查看每一次代码提交记录
+## 🚀 快速开始
 
-## 安装使用
+### 环境准备
 
-**克隆或下载源码**
+- Node.js >= 16
+- pnpm 包管理器
 
-> 环境 node版本 >= 16, 建议项目使用pnpm包管理器,
-
-- 安装依赖
+### 安装依赖
 
 ```bash
+# 安装 pnpm
 npm install pnpm -g
+
+# 安装项目依赖
+pnpm install
 ```
 
-```bash
-pnpm i
-```
-
-- 运行
+### 开发调试
 
 ```bash
-# 运行主应用, 其他命令详见根目录package.json
+# 启动开发服务器
 pnpm dev
 ```
 
-- 打包
+### 项目构建
 
 ```bash
-# 打包主应用, 其他命令详见根目录package.json
+# 构建生产版本
 pnpm build
 ```
+
+## 📝 开发建议
+
+- 建议使用 VSCode 作为开发工具
+- 安装项目推荐的 VSCode 插件以获得最佳开发体验
+- 遵循项目的代码规范和 Git 提交规范
+
+## 🤝 贡献指南
+
+欢迎提交 Issue 或 Pull Request 来改进这个项目！
+
+## 📄 开源协议
+
+[MIT License](./LICENSE)
