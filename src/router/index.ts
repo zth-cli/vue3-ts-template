@@ -20,10 +20,15 @@ const asyncComponentLoader = (component: any) => {
 }
 
 // 处理路由配置
-const processedRoutes = routes.map((route) => ({
-  ...route,
-  component: route.component ? asyncComponentLoader(route.component) : undefined,
-}))
+const processedRoutes = routes.map((route) => {
+  if (route.path !== '/') {
+    return {
+      ...route,
+      component: route.component ? asyncComponentLoader(route.component) : undefined,
+    }
+  }
+  return route
+})
 const router = createRouter({
   history: createWebHashHistory(),
   routes: setupLayouts(processedRoutes),

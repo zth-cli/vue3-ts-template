@@ -12,6 +12,9 @@ import WebfontDownload from 'vite-plugin-webfont-dl'
 import VueRouter from 'unplugin-vue-router/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
 import VueDevTools from 'vite-plugin-vue-devtools'
+
+import autoprefixer from 'autoprefixer'
+import tailwind from 'tailwindcss'
 const resolve = (dir: string) => path.join(__dirname, dir)
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -20,34 +23,32 @@ export default defineConfig({
       '@': resolve('src'),
     },
   },
+  css: {
+    postcss: {
+      plugins: [tailwind() as any, autoprefixer() as any],
+    },
+  },
   plugins: [
     // https://github.com/posva/unplugin-vue-router
     VueRouter({
       extensions: ['.vue', '.md'],
       dts: './typed-router.d.ts',
     }),
-    VueMacros({
-      plugins: {
-        vue: vue({
-          include: [/\.vue$/, /\.md$/],
-          script: {
-            defineModel: true,
-            propsDestructure: true, // 解构 props
-          },
-        }),
-        vueJsx: vueJsx(),
+    vue({
+      include: [/\.vue$/, /\.md$/],
+      script: {
+        defineModel: true,
+        propsDestructure: true, // 解构 props
       },
     }),
+    vueJsx(),
+
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
     Layouts(),
     Inspect(),
+
+    // https://github.com/antfu/unplugin-auto-import
     AutoImport({
-      include: [
-        /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
-        /\.vue$/,
-        /\.vue\?vue/, // .vue
-        /\.md$/, // .md
-      ],
       imports: [
         'vue',
         '@vueuse/head',
@@ -57,16 +58,12 @@ export default defineConfig({
           // add any other imports you were relying on
           'vue-router/auto': ['useLink'],
         },
-      ], // 自动导入vue和vue-router等相关函数
-      eslintrc: {
-        enabled: false, // 若没此json文件，先开启，生成后在关闭
-        filepath: './.eslintrc-auto-import.json', // 默认
-        globalsPropValue: true,
-      },
-      dirs: ['src/store', 'src/composables'],
+      ],
+      dts: './auto-imports.d.ts',
+      dirs: ['src/composables', 'src/stores'],
       vueTemplate: true,
-      resolvers: [],
     }),
+
     //
     Components({
       include: [
