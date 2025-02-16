@@ -2,9 +2,11 @@ import globals from 'globals'
 import pluginJs from '@eslint/js'
 import tseslint from 'typescript-eslint'
 import pluginVue from 'eslint-plugin-vue'
+import deMorgan from 'eslint-plugin-de-morgan'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 
 export default [
+  deMorgan.configs.recommended,
   { ignores: ['**/dist/**', '**/node_modules/**', '.history', 'public/'] },
   { files: ['**/*.{js,mjs,cjs,ts,vue}'] },
   { languageOptions: { globals: globals.browser, ecmaVersion: 12, sourceType: 'module' } },
