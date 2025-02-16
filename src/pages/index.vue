@@ -2,7 +2,7 @@
 import { SunIcon, MoonIcon } from 'lucide-vue-next'
 defineOptions({ name: 'Index' })
 
-const icon = isDark.value ? MoonIcon : SunIcon
+const icon = computed(() => (isDark.value ? MoonIcon : SunIcon))
 </script>
 
 <template>

@@ -7,7 +7,7 @@ import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 
 export default [
   deMorgan.configs.recommended,
-  { ignores: ['**/dist/**', '**/node_modules/**', '.history', 'public/'] },
+  { ignores: ['**/dist/**', '**/node_modules/**', '.history', 'public/', 'tailwind.config.ts'] },
   { files: ['**/*.{js,mjs,cjs,ts,vue}'] },
   { languageOptions: { globals: globals.browser, ecmaVersion: 12, sourceType: 'module' } },
   pluginJs.configs.recommended,
