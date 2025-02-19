@@ -142,6 +142,7 @@ declare global {
   const useAsyncQueue: (typeof import('@vueuse/core'))['useAsyncQueue']
   const useAsyncState: (typeof import('@vueuse/core'))['useAsyncState']
   const useAttrs: (typeof import('vue'))['useAttrs']
+  const useAudioRecorder: (typeof import('./src/composables/useAudioRecorder'))['useAudioRecorder']
   const useBase64: (typeof import('@vueuse/core'))['useBase64']
   const useBattery: (typeof import('@vueuse/core'))['useBattery']
   const useBluetooth: (typeof import('@vueuse/core'))['useBluetooth']
@@ -210,6 +211,7 @@ declare global {
   const useMediaQuery: (typeof import('@vueuse/core'))['useMediaQuery']
   const useMemoize: (typeof import('@vueuse/core'))['useMemoize']
   const useMemory: (typeof import('@vueuse/core'))['useMemory']
+  const useMockWebSocket: (typeof import('./src/composables/useMockWebSocket'))['useMockWebSocket']
   const useModel: (typeof import('vue'))['useModel']
   const useMounted: (typeof import('@vueuse/core'))['useMounted']
   const useMouse: (typeof import('@vueuse/core'))['useMouse']
@@ -237,6 +239,7 @@ declare global {
   const usePreferredReducedMotion: (typeof import('@vueuse/core'))['usePreferredReducedMotion']
   const usePrevious: (typeof import('@vueuse/core'))['usePrevious']
   const useRafFn: (typeof import('@vueuse/core'))['useRafFn']
+  const useRecorder: (typeof import('./src/composables/useAudioRecorder'))['useRecorder']
   const useRefHistory: (typeof import('@vueuse/core'))['useRefHistory']
   const useResizeObserver: (typeof import('@vueuse/core'))['useResizeObserver']
   const useRoute: (typeof import('vue-router'))['useRoute']
@@ -286,7 +289,7 @@ declare global {
   const useVirtualList: (typeof import('@vueuse/core'))['useVirtualList']
   const useWakeLock: (typeof import('@vueuse/core'))['useWakeLock']
   const useWebNotification: (typeof import('@vueuse/core'))['useWebNotification']
-  const useWebSocket: (typeof import('@vueuse/core'))['useWebSocket']
+  const useWebSocket: (typeof import('./src/composables/useWebSocket'))['useWebSocket']
   const useWebWorker: (typeof import('@vueuse/core'))['useWebWorker']
   const useWebWorkerFn: (typeof import('@vueuse/core'))['useWebWorkerFn']
   const useWindowFocus: (typeof import('@vueuse/core'))['useWindowFocus']
@@ -458,6 +461,7 @@ declare module 'vue' {
     readonly useAsyncQueue: UnwrapRef<(typeof import('@vueuse/core'))['useAsyncQueue']>
     readonly useAsyncState: UnwrapRef<(typeof import('@vueuse/core'))['useAsyncState']>
     readonly useAttrs: UnwrapRef<(typeof import('vue'))['useAttrs']>
+    readonly useAudioRecorder: UnwrapRef<(typeof import('./src/composables/useAudioRecorder'))['useAudioRecorder']>
     readonly useBase64: UnwrapRef<(typeof import('@vueuse/core'))['useBase64']>
     readonly useBattery: UnwrapRef<(typeof import('@vueuse/core'))['useBattery']>
     readonly useBluetooth: UnwrapRef<(typeof import('@vueuse/core'))['useBluetooth']>
@@ -526,6 +530,7 @@ declare module 'vue' {
     readonly useMediaQuery: UnwrapRef<(typeof import('@vueuse/core'))['useMediaQuery']>
     readonly useMemoize: UnwrapRef<(typeof import('@vueuse/core'))['useMemoize']>
     readonly useMemory: UnwrapRef<(typeof import('@vueuse/core'))['useMemory']>
+    readonly useMockWebSocket: UnwrapRef<(typeof import('./src/composables/useMockWebSocket'))['useMockWebSocket']>
     readonly useModel: UnwrapRef<(typeof import('vue'))['useModel']>
     readonly useMounted: UnwrapRef<(typeof import('@vueuse/core'))['useMounted']>
     readonly useMouse: UnwrapRef<(typeof import('@vueuse/core'))['useMouse']>
@@ -601,7 +606,7 @@ declare module 'vue' {
     readonly useVirtualList: UnwrapRef<(typeof import('@vueuse/core'))['useVirtualList']>
     readonly useWakeLock: UnwrapRef<(typeof import('@vueuse/core'))['useWakeLock']>
     readonly useWebNotification: UnwrapRef<(typeof import('@vueuse/core'))['useWebNotification']>
-    readonly useWebSocket: UnwrapRef<(typeof import('@vueuse/core'))['useWebSocket']>
+    readonly useWebSocket: UnwrapRef<(typeof import('./src/composables/useWebSocket'))['useWebSocket']>
     readonly useWebWorker: UnwrapRef<(typeof import('@vueuse/core'))['useWebWorker']>
     readonly useWebWorkerFn: UnwrapRef<(typeof import('@vueuse/core'))['useWebWorkerFn']>
     readonly useWindowFocus: UnwrapRef<(typeof import('@vueuse/core'))['useWindowFocus']>

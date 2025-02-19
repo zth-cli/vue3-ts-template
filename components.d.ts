@@ -6,9 +6,20 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    Avatar: typeof import('./src/components/ui/avatar/Avatar.vue')['default']
+    AvatarFallback: typeof import('./src/components/ui/avatar/AvatarFallback.vue')['default']
+    AvatarImage: typeof import('./src/components/ui/avatar/AvatarImage.vue')['default']
     Button: typeof import('./src/components/ui/button/Button.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Toast: typeof import('./src/components/ui/toast/Toast.vue')['default']
+    ToastAction: typeof import('./src/components/ui/toast/ToastAction.vue')['default']
+    ToastClose: typeof import('./src/components/ui/toast/ToastClose.vue')['default']
+    ToastDescription: typeof import('./src/components/ui/toast/ToastDescription.vue')['default']
+    Toaster: typeof import('./src/components/ui/toast/Toaster.vue')['default']
+    ToastProvider: typeof import('./src/components/ui/toast/ToastProvider.vue')['default']
+    ToastTitle: typeof import('./src/components/ui/toast/ToastTitle.vue')['default']
+    ToastViewport: typeof import('./src/components/ui/toast/ToastViewport.vue')['default']
   }
 }
